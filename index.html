@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peddy's Website</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .roboto-regular {
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+      }
+      .style-button {
+        color: gray !important;
+      }
+      .active {
+        background-color: rgb(219, 239, 252);
+        border: 1px solid blue;
+        border-radius: 50px;
+      }
+      .bg {
+        background-color: #ccf5fa;
+      }
+    </style>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#0E7A81",
+              "button-colore": "#0E7A81",
+              "button-colore2": "#0E7A81",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="roboto-regular">
+    <header class="w-11/12 mx-auto mb-20">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+              <li><a>Home</a></li>
+              <li><a href="">Shop</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+          <div class="flex justify-start items-center gap-2">
+            <img src="images/logo.webp" alt="" />
+            <p class="font-bold text-xl">Peddy</p>
+          </div>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a>Home</a></li>
+            <li><a>Shop</a></li>
+            <li><a>Contact</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <div
+            class="h-[50px] w-[50px] border rounded-full flex items-center justify-center"
+          >
+            <img class="h-[30px] w-[30px]" src="images/user.png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <div class="mt-4">
+          <p class="text-gray-500 text-xl mb-4">
+            Bringing Families Together ❤️‍🔥
+          </p>
+          <h1 class="leading-snug font-bold text-5xl mb-4">
+            Your Path to Adoption <br />
+            Starts Here
+          </h1>
+          <p class="text-xs text-gray-700 mb-6">
+            Animals are truly our best friends because they offer unconditional
+            love and companionship,<br />
+            asking for little in return. They have an incredible ability to
+            sense our emotions and provide comfort during tough times, <br />
+            making them loyal and empathetic partners in life. Whether it's a
+            playful dog, a purring cat,<br />
+            or even a chirping bird, animals enrich our lives with joy and
+            positivity.
+          </p>
+          <button class="py-3 px-6 rounded-xl bg-button-colore text-white">
+            <a href="#main">View More</a>
+          </button>
+        </div>
+        <div class="flex justify-center">
+          <img src="images/pet.webp" alt="" />
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="mb-6 w-11/12 mx-auto">
+      <div>
+        <div class="text-center mb-5">
+          <h2 class="font-bold mb-4 text-3xl">Adopt Your Best Friend</h2>
+          <p class="text-xs text-gray-600 pb-6">
+            Pets are our best friends because they are always there for us,
+            offering love and loyalty without judgment. They brighten our <br />
+            days with their playful antics and provide comfort when we need it
+            most.
+          </p>
+        </div>
+
+        <div
+          id="categories"
+          class="grid grid-cols-2 gap-2 md:flex justify-between items-center"
+        ></div>
+      </div>
+      <div class="flex justify-between items-center mt-7 mb-7">
+        <h2 class="font-bold text-2xl">Best Deal For you</h2>
+        <button
+          id="sorting"
+          class="px-5 py-3 bg-button-colore text-white font-bold rounded-xl"
+        >
+          Sort by Price
+        </button>
+      </div>
+
+      <div class="hidden" id="spinner">
+        <div class="flex justify-center items-center">
+          <span class="loading loading-spinner loading-lg"></span>
+        </div>
+      </div>
+      <div class="flex items-start">
+        <section
+          id="pets"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto"
+        ></section>
+      </div>
+
+      <!-- Open the modal using ID.showModal() method -->
+
+      <div id="modal-container">
+        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+            <div class="flex justify-center items-center gap-3 mb-4">
+              <h2 class="text-2xl">Congratulation!!</h2>
+              <div class="w-7 h-7">
+                <img src="images/confetti.png" alt="" />
+              </div>
+            </div>
+            <div class="flex justify-center items-center gap-3 mb-5">
+              <p class="text-sm text-gray-500">You have a Bestfriend Now.</p>
+              <img class="w-7 h-7" src="images/cheers.png" alt="" />
+            </div>
+            <span class="text-6xl flex justify-center items-center">
+              <span id="counter-display">3</span>
+            </span>
+          </div>
+        </dialog>
+      </div>
+
+      <!-- Open the modal using ID.showModal() method -->
+
+      <div class="modal-container">
+        <dialog id="my_modal_1" class="modal">
+          <div class="modal-box">
+            <div id="modal-content"></div>
+            <div class="w-full">
+              <form method="dialog" class="">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn w-full bg text-button-colore">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </main>
+
+    <footer class="footer bg-black text-white p-10">
+      <div
+        class="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:flex justify-between items-start"
+      >
+        <nav>
+          <div class="flex justify-start items-center gap-2 mb-4">
+            <img src="images/logo.webp" alt="" />
+            <p class="font-bold text-xl">Peddy</p>
+          </div>
+          <li class="list-none text-xs text-gray-400 mb-2">
+            Location: av. Washington 165, NY CA
+          </li>
+          <li class="list-none text-xs text-gray-400 mb-2">54003</li>
+          <li class="list-none text-xs text-gray-400 mb-2">
+            Phone: +31 85 964 47 25
+          </li>
+          <li class="list-none text-xs text-gray-400 mb-2">
+            Email: info@yourdomain.com
+          </li>
+          <li class="list-none text-xs text-gray-400 mb-4">
+            Openings hours: 9.00 AM - 5.00 PM
+          </li>
+
+          <div class="flex justify-start items-center gap-3 mb-5">
+            <div class="h-[30px] w-[30px]">
+              <img src="images/facebook.png" alt="" />
+            </div>
+            <div class="h-[30px] w-[30px]">
+              <img src="images/twitter.png" alt="" />
+            </div>
+            <div class="h-[30px] w-[30px]">
+              <img src="images/instagram.png" alt="" />
+            </div>
+            <div class="h-[35px] w-[35px]">
+              <img src="images/youtube.png" alt="" />
+            </div>
+          </div>
+        </nav>
+        <nav>
+          <h6 class="font-bold text-sm mb-5">Useful Links</h6>
+          <li class="list-none text-xs text-gray-500 mb-2">Home</li>
+          <li class="list-none text-xs text-gray-500 mb-2">About Us</li>
+          <li class="list-none text-xs text-gray-500 mb-2">Animals</li>
+          <li class="list-none text-xs text-gray-500 mb-2">Foundation</li>
+          <li class="list-none text-xs mb-4 text-gray-500">Contact</li>
+        </nav>
+
+        <form>
+          <h6 class="text-sm font-bold mb-5">Drop a Massage</h6>
+          <fieldset class="form-control w-60 md:w-80">
+            <div class="grid grid-cols-1 gap-4">
+              <input
+                type="text"
+                placeholder="Enter your email "
+                class="input input-bordered join-item bg-opacity-20 text-gray-300"
+              />
+              <button class="w-60 md:w-80 py-4 rounded-xl bg-button-colore">
+                Subscribe
+              </button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </footer>
+
+    <script src="js/style.js"></script>
+  </body>
+</html>
